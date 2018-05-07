@@ -6,11 +6,17 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+
+  mounted () {
+    // 创建一个Audio对象并保存
+    let audio = new Audio()
+    this.$store.commit('ObjectAudioSave', audio)
+  }
 }
 </script>
 
 <style lang="scss">
-  @import './style/init.scss';
+  @import './static/style/init.scss';
 </style>
 

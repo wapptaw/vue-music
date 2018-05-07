@@ -1,7 +1,7 @@
-import getData from '../fetch/getData'
+import fetch from '../config/fetch'
 
 // 使用代理改变参数
-let proxy = new Proxy(getData, {
+let proxy = new Proxy(fetch, {
   apply (target, ctx, args) {
     args[0] = 'http://localhost:3000' + args[0]
     return Reflect.apply(...arguments)
@@ -70,7 +70,7 @@ export const highquality = (cat = '全部', limit = 20) => proxy('/top/playlist/
     limit
   }
 })
-// 获取各单详情
+// 获取歌单详情
 export const playlistDetail = playlistId => proxy('/playlist/detail', {
   params: {
     id: playlistId

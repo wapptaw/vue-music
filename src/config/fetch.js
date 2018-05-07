@@ -1,4 +1,4 @@
-export default async function (url, {method, params} = {method: 'GET', params: null}) {
+export default async function (url, {method = 'GET', params = null} = {}) {
   try {
     // 拼接url
     let paramsStr = ''
@@ -9,8 +9,8 @@ export default async function (url, {method, params} = {method: 'GET', params: n
           arr.push(`${v}=${params[v]}`)
         }
         paramsStr = arr.join('&')
+        url += `?${paramsStr}` // 拼接url
       }
-      url += `?${paramsStr}` // 拼接url
     }
     // 使用fetch
     if (fetch) {

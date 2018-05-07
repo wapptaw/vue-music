@@ -11,15 +11,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['env', 'stage-2'],
-              plugins: ['transform-runtime']
-            }
-          }
-        ],
+        use: 'babel-loader',
         include: path.resolve(__dirname, 'src')
       },
       {

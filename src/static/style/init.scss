@@ -1,0 +1,18 @@
+body, div, section, nav, header, footer, span, ul, li, ol, dl, dt, dd, h1, h2, h3, h4, h5, h6, a, img, p {
+  padding: 0;
+  margin: 0;
+  font-size: .16rem;
+  font-family: Arial, Helvetica, sans-serif, '微软雅黑';
+  font-weight: normal;
+}
+html {
+  font-size: 100px;
+}
+ul, li, ol, dl, dt, dd {
+  list-style: none;
+}
+input, button {
+  border: 0;
+  outline: none;
+  background: #fff;
+}
