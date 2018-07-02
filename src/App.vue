@@ -18,5 +18,6 @@ export default {
 
 <style lang="scss">
   @import './static/style/init.scss';
+  @import './static/style/animation.scss';
 </style>
 

@@ -1,3 +1,4 @@
+// 淡入淡出
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
@@ -6,4 +7,37 @@
 }
 .fade-enter-to, .fade-leave {
   opacity: 1;
+}
+// 弹出框淡入淡出
+.fade-alert-enter, .fade-alert-leave-to {
+  opacity: 0;
+}
+.fade-alert-enter-active {
+  transition: opacity 1s ease;
+}
+.fade-alert-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-alert-enter-to, .fade-alert-leave {
+  opacity: 1;
+}
+// 右侧滑出
+.slide-enter, .slide-leave-to {
+  transform: translateX(100%);
+}
+.slide-enter-active, .slide-leave-active {
+  transition: transform .2s ease;
+}
+.slide-enter-to, .slide-leave {
+  transform: translateX(0)
+}
+// 底部滑出
+.slide-bottom-enter, .slide-bottom-leave-to {
+  transform: translateY(100%);
+}
+.slide-bottom-enter-active, .slide-bottom-leave-active {
+  transition: transform .5s ease;
+}
+.slide-bottom-enter-to, .slide-bottom-leave {
+  transform: translateY(0)
 }

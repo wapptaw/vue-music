@@ -16,12 +16,9 @@
         v-for="(item, index) in bannerShowData"
         :key="index"
         class="liBanner">
-        <a :href="item.url || 'javascript:;'" class="aBanner">
-          <img :src="item.pic" :alt="item.typeTitle" class="imgBanner">
+        <a :href="item && item.url || 'javascript:;'" class="aBanner">
+          <img :src="item && item.picUrl" class="imgBanner">
         </a>
-        <span
-          class="typeTitle"
-          :style="{'background-color': item.titleColor}">{{item.typeTitle}}</span>
       </li>
     </ul>
     <ul class="ulBannerMark">
@@ -180,17 +177,6 @@ export default {
             width: 100%;
             vertical-align: middle;
           }
-        }
-        .typeTitle {
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          font-size: .12rem;
-          color: #fff;
-          opacity: .8;
-          padding: 0 .05rem;
-          line-height: 1.6em;
-          border-radius: 3px 0 0 0;
         }
       }
     }

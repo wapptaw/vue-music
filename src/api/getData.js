@@ -32,13 +32,17 @@ export const playlist = uid => proxy('/user/playlist', {
 })
 // 获取用户电台
 export const dj = uid => proxy('/user/dj', {
-  uid
+  params: {
+    uid
+  }
 })
 // 获取用户关注列表
 export const follows = (uid, limit = 30, offset = 0) => proxy('/user/follows', {
-  uid,
-  limit,
-  offset
+  params: {
+    uid,
+    limit,
+    offset
+  }
 })
 // 获取用户粉丝列表
 export const followeds = (uid, limit = 30, offset = 0) => proxy('/user/followeds', {
@@ -90,12 +94,16 @@ export const search = (keywords, limit = 30, offset = 0) => proxy('/search', {
     offset
   }
 })
+// 热搜
+export const searchHot = () => proxy('/search/hot')
 // 搜索建议
 export const suggest = (keywords, limit = 30, offset = 0, type = 1) => proxy('/search/suggest', {
-  keywords,
-  limit,
-  offset,
-  type
+  params: {
+    keywords,
+    limit,
+    offset,
+    type
+  }
 })
 // 搜索多重匹配
 export const multimatch = keywords => proxy('/search/multimatch', {
@@ -118,7 +126,7 @@ export const lyric = musicId => proxy('/lyric', {
   }
 })
 // 歌曲评论
-export const comment = (musicId, limit = 20, offset = 0) => proxy('/comment/music', {
+export const songComment = (musicId, limit = 20, offset = 0) => proxy('/comment/music', {
   params: {
     id: musicId,
     limit,
@@ -135,15 +143,19 @@ export const albumComment = (musicId, limit = 20, offset = 0) => proxy('/comment
 })
 // 歌单评论
 export const playlistComment = (musicId, limit = 20, offset = 0) => proxy('/comment/playlist', {
-  id: musicId,
-  limit,
-  offset
+  params: {
+    id: musicId,
+    limit,
+    offset
+  }
 })
 // MV评论
 export const MVComment = (MVId, limit = 20, offset = 0) => proxy('/comment/mv', {
-  id: musicId,
-  limit,
-  offset
+  params: {
+    id: musicId,
+    limit,
+    offset
+  }
 })
 // 电台节目评论
 export const djComment = (djId, limit, offset) => proxy('/comment/dj', {
@@ -227,7 +239,9 @@ export const songSimi = musicId => proxy('/simi/song', {
 })
 // 获取最近5个听了这首歌的用户
 export const userSimi = musicId => proxy('/simi/user', {
-  id: musicId
+  params: {
+    id: musicId
+  }
 })
 // 获取每日推荐歌单
 export const recommendAlbum = () => proxy('/recommend/resource')
@@ -256,7 +270,9 @@ export const fmTrash = musicId => proxy('/fm_trash', {
 })
 // 歌单（网游精选碟）
 export const playlistTop = (order = 'hot') => proxy('/top/playlist', {
-  order
+  params: {
+    order
+  }
 })
 // 新碟上架
 export const albumTop = (limit = 50, offset = 0) => proxy('/top/album', {
@@ -299,15 +315,21 @@ export const mvTop = (limit = 30, offset = 0) => proxy('top/mv', {
 })
 // 获取mv数据
 export const mv = mvid => proxy('/mv', {
-  mvid
+  params: {
+    mvid
+  }
 })
 // 播放mv
 export const mvPlay = url => proxy('/mv/url', {
-  url
+  params: {
+    url
+  }
 })
 // 排行榜
 export const listTop = idx => proxy('/top/list', {
-  idx
+  params: {
+    idx
+  }
 })
 // 歌手榜
 export const artistTop = () => proxy('/toplist/artist')
@@ -319,7 +341,9 @@ export const recommendDj = () => proxy('/dj/recommend')
 export const catelist = () => proxy('/dj/catelist')
 // 电台分类推荐
 export const recommendDjCate = type => proxy('/dj/recommend/type', {
-  type
+  params: {
+    type
+  }
 })
 // 电台订阅
 export const subscribe = (rid, t) => proxy('/dj/sub', {
